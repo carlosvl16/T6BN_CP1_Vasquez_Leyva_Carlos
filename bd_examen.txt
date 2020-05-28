@@ -1,0 +1,26 @@
+create  database bd_examen;
+
+
+use bd_examen;
+
+create table tipo(
+cod_tipo int primary key,
+nom_tipo varchar(45));
+
+insert into tipo values(1,'Administrador');
+insert into tipo values(2,'Docente');
+insert into tipo values(3,'Normal');
+insert into tipo values(4,'Gerencia');
+
+create table cliente (
+cod_cliente int auto_increment,
+nom_cliente varchar(50) ,
+ape_cliente varchar(50),
+dni_docente int(8),
+fec_nac_cliente VARCHAR(50),
+cod_tipo int,
+primary key (cod_cliente),
+foreign key (cod_tipo) references  Tipo(cod_tipo)
+);
+
+insert into cliente values(null, 'carlos','vasquez',73063706,'2020/05/20',1);
